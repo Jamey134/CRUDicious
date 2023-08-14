@@ -1,6 +1,7 @@
 #pragma warning disable CS8618
 // We can disable our warnings safely because we know the framework will assign non-null values 
 // when it constructs this class for us.
+using CRUDicious.Models;
 using Microsoft.EntityFrameworkCore;
 namespace CRUDicious.Models;
 // the MyContext class represents a session with our MySQL database, allowing us to query for or save data
@@ -12,5 +13,5 @@ public class MyContext : DbContext
     // We need to create a new DbSet<Model> for every model in our project that is making a table
     // The name of our table in our database will be based on the name we provide here
     // This is where we provide a plural version of our model to fit table naming standards    
-    public DbSet<Monster> Monsters { get; set; } 
+    public DbSet<Dish> Dishes { get; set; } 
 }

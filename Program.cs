@@ -1,7 +1,24 @@
+// You will need access to your models for your context file
+using CRUDicious.Models;
+
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Create a variable to hold your connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// All your builder.services go here
+// And we will add one more service
+// Make sure this is BEFORE var app = builder.Build()!!
+builder.Services.AddDbContext<MyContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -13,7 +30,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(
