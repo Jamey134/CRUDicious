@@ -1,5 +1,6 @@
 #pragma warning disable CS8618
 
+using System.ComponentModel.DataAnnotations;
 namespace LinqEruption.Models;
 public class Dish
 {
@@ -8,9 +9,9 @@ public class Dish
     public string Chef { get; set; }
     public int Tastiness { get; set; }
     public int Calories { get; set; }
-    public string CreatedAt { get; set; }
-    public string UpdatedAt { get; set; }
-    public Dish(int id, string name, string chef, int tastiness, int calories,  createdAt, string updatedAt)
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public Dish(int id, string name, string chef, int tastiness, int calories, DateTime createdAt, DateTime updatedAt)
     {
         ID = id;
         Name = name;
