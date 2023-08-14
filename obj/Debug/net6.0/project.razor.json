@@ -18379,6 +18379,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jamey134/Desktop/Coding Dojo/C#/ORM/CRUDicious/Views/Home/New.cshtml",
+      "TargetPath": "Views\\Home\\New.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jamey134/Desktop/Coding Dojo/C#/ORM/CRUDicious/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

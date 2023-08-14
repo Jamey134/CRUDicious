@@ -16,6 +16,7 @@ public class Dish
     [Required]
     [Range(0, 10000)]
     public int Calories { get; set; }
+    public string Description { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }
